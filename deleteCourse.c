@@ -26,11 +26,12 @@ void delete_course(int id) {
         printf("Course with ID %d not found.\n", id);
         return;
     }
+//Denisi
+   // Shift the courses to fill the gap left by the deleted course
+for (int i = index; i < courseCount - 1; i++) {
+    courses[i] = courses[i + 1];  // Each course is moved one position left in the array.
+}
 
-    // Task for Team Member 2: Implement the array shift logic
-    // Shift the courses to fill the gap left by the deleted course
-    for (int i = index; i < courseCount - 1; i++) {
-        courses[i] = courses[i + 1];
     }
 
     // Task for Team Member 3: Handle memory reallocation
