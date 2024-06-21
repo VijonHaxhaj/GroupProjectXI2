@@ -3,7 +3,6 @@
 #include <string.h>
 
 
-delete_course(int id);
 
 int main() {
 
