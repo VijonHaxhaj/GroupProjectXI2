@@ -33,18 +33,29 @@ for (int i = index; i < courseCount - 1; i++) {
 }
 
     }
-
-    // Task for Team Member 3: Handle memory reallocation
+//elijesa
+// Task for Team Member 3: Handle memory reallocation
     // Decrease the course count
     courseCount--;
 
-    // Reallocate memory to resize the courses array
-    courses = realloc(courses, courseCount * sizeof(Course));
+    // Reallocate memory to resize the courses array only if there are remaining courses
+    if (courseCount > 0) {
+        Course* temp = realloc(courses, courseCount * sizeof(Course));
 
-    // Check if memory reallocation was successful
-    if (courseCount > 0 && courses == NULL) {
-        fprintf(stderr, "Memory reallocation failed\n");
-        exit(1);
+        // Check if memory reallocation was successful
+        if (temp == NULL) {
+            fprintf(stderr, "Memory reallocation failed\n");
+            exit(1);
+        }
+
+        courses = temp;
+    } else {
+        // If there are no remaining courses, free the allocated memory and set courses to NULL
+        free(courses);
+        courses = NULL;
+    }
+}
+    
     }
 
     printf("Course with ID %d deleted successfully.\n", id);
