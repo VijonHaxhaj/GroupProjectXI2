@@ -8,3 +8,12 @@ typedef struct Student {
     char name[100];
     int age;
 } Student;
+
+// Define the structure for a list of students
+typedef struct StudentList {
+    Student* students;
+    int count;
+    int capacity;
+} StudentList
+
+
