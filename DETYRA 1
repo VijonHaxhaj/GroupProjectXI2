@@ -18,3 +18,9 @@ void initStudentList(StudentList* list, int capacity) {
     list->students = (Student)malloc(capacity sizeof(Student));
     list->count = 0;
     list->capacity = capacity;
+void addStudent(StudentList* list, int id, const char* name, int age) {
+    // Check if we need to resize the array
+    if (list->count == list->capacity) {
+        list->capacity = 2;
+        list->students = (Student)realloc(list->students, list->capacity * sizeof(Student));
+    }
