@@ -25,3 +25,12 @@ void deleteStudent(StudentList* list, int id) {
             for (int j = i; j < list->count - 1; j++) {
                 list->students[j] = list->students[j + 1];
             }
+list->count--;
+            break;
+        }
+    }
+
+    if (found) {
+        // Reallocate memory to shrink the array if necessary
+        if (list->count > 0) {
+            list->students = (Student)realloc(list->students, list->count sizeof(Student));
