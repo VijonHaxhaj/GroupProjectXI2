@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Define a structure to store course information
+// Define a structure to store course information - Riad Ujkani
 struct Course {
     char code[20];
     char name[50];
