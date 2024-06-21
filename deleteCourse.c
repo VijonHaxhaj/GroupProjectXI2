@@ -27,4 +27,24 @@ void delete_course(int id) {
         return;
     }
 
+    // Task for Team Member 2: Implement the array shift logic
+    // Shift the courses to fill the gap left by the deleted course
+    for (int i = index; i < courseCount - 1; i++) {
+        courses[i] = courses[i + 1];
+    }
+
+    // Task for Team Member 3: Handle memory reallocation
+    // Decrease the course count
+    courseCount--;
+
+    // Reallocate memory to resize the courses array
+    courses = realloc(courses, courseCount * sizeof(Course));
+
+    // Check if memory reallocation was successful
+    if (courseCount > 0 && courses == NULL) {
+        fprintf(stderr, "Memory reallocation failed\n");
+        exit(1);
+    }
+
+    printf("Course with ID %d deleted successfully.\n", id);
 }
