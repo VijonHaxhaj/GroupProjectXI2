@@ -43,3 +43,20 @@ void addCourse(const char* code, const char* name) {
     
     printf("Course with code %s added successfully.\n", code);
 }
+
+int main() {
+    // Example: Adding courses
+    addCourse("CSCI101", "Introduction to Computer Science");
+    addCourse("MATH201", "Calculus I");
+    
+    // Print all courses (for demonstration purposes)
+    printf("All Courses:\n");
+    for (int i = 0; i < numCourses; ++i) {
+        printf("Code: %s, Name: %s\n", courses[i].code, courses[i].name);
+    }
+    
+    // Clean up: Free allocated memory for courses array
+    free(courses);
+    
+    return 0;
+}
