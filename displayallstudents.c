@@ -23,3 +23,9 @@ void displayAllStudents(const StudentList* list) {
         printf("%d\t%-15s\t%d\n", list->students[i].id, list->students[i].name, list->students[i].age);
     }
 }
+// Test the displayAllStudents function
+int main() {
+    StudentList list;
+    list.students = (Student)malloc(3 sizeof(Student));
+    list.count = 3;
+    list.capacity = 3;
