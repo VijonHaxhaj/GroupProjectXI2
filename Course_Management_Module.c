@@ -1,10 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <deleteCourse.c>
+
+
+delete_course(int id);
 
 int main() {
 
     
     return 0;
 }
+
