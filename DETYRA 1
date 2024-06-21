@@ -13,3 +13,8 @@ typedef struct StudentList {
     int count;
     int capacity;
 } StudentList;
+
+void initStudentList(StudentList* list, int capacity) {
+    list->students = (Student)malloc(capacity sizeof(Student));
+    list->count = 0;
+    list->capacity = capacity;
