@@ -18,3 +18,10 @@ typedef struct StudentList {
 void deleteStudent(StudentList* list, int id) {
     int found = 0;
     for (int i = 0; i < list->count; i++)
+{
+        if (list->students[i].id == id) {
+            found = 1;
+            // Shift the remaining students
+            for (int j = i; j < list->count - 1; j++) {
+                list->students[j] = list->students[j + 1];
+            }
