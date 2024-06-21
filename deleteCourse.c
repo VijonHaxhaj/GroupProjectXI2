@@ -26,3 +26,5 @@ void delete_course(int id) {
         printf("Course with ID %d not found.\n", id);
         return;
     }
+
+}
