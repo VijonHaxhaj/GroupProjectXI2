@@ -1,20 +1,11 @@
+#include "course.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-// Define a structure to store course information
-struct Course {
-    char code[20];
-    char name[50];
-    // Add more fields as needed (e.g., instructor, credits, etc.)
-};
-
 // Global variables
 struct Course *courses = NULL; // Array to store courses (dynamic allocation)
 int numCourses = 0; // Current number of courses
-
-// Function prototype for addCourse
-void addCourse(const char* code, const char* name);
 
 // Function to add a new course
 void addCourse(const char* code, const char* name) {
@@ -51,22 +42,4 @@ void addCourse(const char* code, const char* name) {
     free(newCourse);
     
     printf("Course with code %s added successfully.\n", code);
-}
-
-// Example usage
-int main() {
-    // Example: Adding courses
-    addCourse("CSCI101", "Introduction to Computer Science");
-    addCourse("MATH201", "Calculus I");
-    
-    // Print all courses (for demonstration purposes)
-    printf("All Courses:\n");
-    for (int i = 0; i < numCourses; ++i) {
-        printf("Code: %s, Name: %s\n", courses[i].code, courses[i].name);
-    }
-    
-    // Clean up: Free allocated memory for courses array
-    free(courses);
-    
-    return 0;
 }
