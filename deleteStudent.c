@@ -34,3 +34,11 @@ list->count--;
         // Reallocate memory to shrink the array if necessary
         if (list->count > 0) {
             list->students = (Student)realloc(list->students, list->count sizeof(Student));
+} else {
+            free(list->students);
+            list->students = NULL;
+        }
+    } else {
+        printf("Student with ID %d not found.\n", id);
+    }
+}
